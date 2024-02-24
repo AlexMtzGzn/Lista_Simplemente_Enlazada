@@ -252,7 +252,6 @@ void eliminar_valor_Lista(struct Lista *lista, int *elemento)
     }
 }
 
-
 int obtener_Elemento_En_Posicion(struct Lista *lista, int *elemento)
 {
     if (es_Vacia_Lista(lista))
