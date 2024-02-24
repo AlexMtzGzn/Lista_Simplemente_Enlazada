@@ -184,7 +184,6 @@ void eliminar_Posicion_Lista(struct Lista *lista, int *posicion)
         int contador = 0;
         struct Nodo *nodoActual = lista->cabeza, *nodoAnterior = NULL;
 
-        // Avanzar hasta la posición a eliminar
         while (nodoActual != NULL && contador != *posicion)
         {
             nodoAnterior = nodoActual;
@@ -199,9 +198,8 @@ void eliminar_Posicion_Lista(struct Lista *lista, int *posicion)
                 lista->cabeza = nodoActual->siguiente;
                 free(nodoActual);
 
-                if (lista->cabeza == NULL) {
+                if (lista->cabeza == NULL) 
                     lista->cola = NULL;
-                }
             }
             else
             {
@@ -209,7 +207,6 @@ void eliminar_Posicion_Lista(struct Lista *lista, int *posicion)
                 free(nodoActual);
 
                 if (nodoActual->siguiente == NULL)
-                
                     lista->cola = nodoAnterior;
                 
             }
@@ -219,27 +216,31 @@ void eliminar_Posicion_Lista(struct Lista *lista, int *posicion)
 
 void eliminar_valor_Lista(struct Lista *lista, int *elemento)
 {
-
     if (!es_Vacia_Lista(lista))
     {
-
         struct Nodo *nodoActual = lista->cabeza, *nodoAnterior = NULL;
 
         while (nodoActual != NULL)
         {
             if (*elemento == nodoActual->dato)
             {
-                if (nodoAnterior == NULL)
+                if (nodoAnterior == NULL) 
                 {
                     lista->cabeza = nodoActual->siguiente;
                     free(nodoActual);
                     nodoActual = lista->cabeza;
+                    
+                    if (lista->cabeza == NULL) 
+                        lista->cola = NULL;
                 }
                 else
                 {
                     nodoAnterior->siguiente = nodoActual->siguiente;
                     free(nodoActual);
                     nodoActual = nodoAnterior->siguiente;
+
+                    if (nodoActual == NULL)
+                        lista->cola = nodoAnterior;
                 }
             }
             else
@@ -250,6 +251,7 @@ void eliminar_valor_Lista(struct Lista *lista, int *elemento)
         }
     }
 }
+
 
 int obtener_Elemento_En_Posicion(struct Lista *lista, int *elemento)
 {
