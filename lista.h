@@ -14,6 +14,7 @@ struct Lista
     struct Nodo *cabeza, *cola;
 };
 
+//Crear Nodo Nuevo
 struct Nodo* crearNodo(int *elemento);
 
 //Operaciones Generales
@@ -48,4 +49,4 @@ void menu_Insercion(struct Lista *lista);
 void menu_Busqueda(struct Lista *lista);
 void menu_OperacionesGenerales(struct Lista *lista);
 
-#endif
+#endif /*lista.c*/
