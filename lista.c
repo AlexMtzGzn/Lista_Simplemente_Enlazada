@@ -87,16 +87,13 @@ void inserta_Final_Lista(struct Lista *lista, int *elemento)
 
 void inserta_Posicion_Lista(struct Lista *lista, int *elemento, int *posicion)
 {
-    struct Nodo *nodoNuevo = malloc(sizeof(struct Nodo));
+    struct Nodo *nodoNuevo = crearNodo(elemento);
 
     if (nodoNuevo != NULL)
     {
-        nodoNuevo->dato = *elemento;
-        nodoNuevo->siguiente = NULL;
-
         if (es_Vacia_Lista(lista))
         {
-            lista->cabeza = nodoNuevo;
+            lista->cabeza = lista->cola = nodoNuevo;
         }
         else
         {
@@ -112,12 +109,21 @@ void inserta_Posicion_Lista(struct Lista *lista, int *elemento, int *posicion)
 
             if (contador == *posicion)
             {
-                nodoNuevo->siguiente = nodoActual;
+                
 
-                if (nodoAnterior != NULL)
+                if (nodoAnterior != NULL){
+                    nodoNuevo->siguiente = nodoActual;
                     nodoAnterior->siguiente = nodoNuevo;
+                }
+                    
+
+                if(nodoActual == NULL)
+                    inserta_Final_Lista(lista, elemento);
+
                 else
-                    lista->cabeza = nodoNuevo;
+                    inserta_Principio_Lista(lista, elemento);
+                
+                    
             }
             else
             {
