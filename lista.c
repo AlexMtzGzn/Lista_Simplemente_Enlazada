@@ -165,8 +165,7 @@ void eliminar_Final_Lista(struct Lista *lista)
         }
         if (nodoAnterior == NULL)
         {
-            lista->cabeza = NULL;
-            lista->cola = NULL;
+            lista->cabeza = lista->cola = NULL;
         }
         else
         {
