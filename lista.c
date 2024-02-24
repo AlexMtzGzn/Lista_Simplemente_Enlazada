@@ -209,9 +209,9 @@ void eliminar_Posicion_Lista(struct Lista *lista, int *posicion)
                 free(nodoActual);
 
                 if (nodoActual->siguiente == NULL)
-                {
+                
                     lista->cola = nodoAnterior;
-                }
+                
             }
         }
     }
