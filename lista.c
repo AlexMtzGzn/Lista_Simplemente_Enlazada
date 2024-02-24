@@ -247,9 +247,9 @@ void eliminar_valor_Lista(struct Lista *lista, int *elemento)
 int obtener_Elemento_En_Posicion(struct Lista *lista, int *elemento)
 {
     if (es_Vacia_Lista(lista))
-    {
+    
         return -1;
-    }
+    
     else
     {
         struct Nodo *nodoActual = lista->cabeza;
@@ -269,9 +269,9 @@ int obtener_Elemento_En_Posicion(struct Lista *lista, int *elemento)
 int obtener_Posicion_Por_Elemento(struct Lista *lista, int *posicion)
 {
     if (es_Vacia_Lista(lista) || *posicion < 0)
-    {
+    
         return -1;
-    }
+    
     else
     {
         struct Nodo *nodoActual = lista->cabeza;
@@ -280,9 +280,9 @@ int obtener_Posicion_Por_Elemento(struct Lista *lista, int *posicion)
         while (nodoActual != NULL)
         {
             if (contador == *posicion)
-            {
+
                 return nodoActual->dato;
-            }
+            
             contador++;
             nodoActual = nodoActual->siguiente;
         }
@@ -294,9 +294,9 @@ int obtener_Posicion_Por_Elemento(struct Lista *lista, int *posicion)
 void imprimir_Lista(struct Lista *lista)
 {
     if (es_Vacia_Lista(lista))
-    {
+    
         printf("\nLa lista está vacía.\n");
-    }
+    
     else
     {
         struct Nodo *nodoActual = lista->cabeza;
@@ -366,8 +366,6 @@ void menu_Insercion(struct Lista *lista)
             inserta_Posicion_Lista(lista, &elemento, &posicion);
             imprimir_Lista(lista);
             break;
-        case 4:
-            break;
         default:
             printf("\nOpción no válida\n");
             break;
@@ -417,9 +415,8 @@ void menu_Eliminacion(struct Lista *lista)
             eliminar_valor_Lista(lista, &elemento);
             imprimir_Lista(lista);
             break;
-        case 5:
-            break;
         default:
+            printf("\nOpción no válida\n");
             break;
         }
 
@@ -455,10 +452,8 @@ void menu_Busqueda(struct Lista *lista)
             printf("\nElemento en la posición %i: %i", posicion, obtener_Posicion_Por_Elemento(lista, &posicion));
             imprimir_Lista(lista);
             break;
-        case 3:
-            break;
-
         default:
+            printf("\nOpción no válida\n");
             break;
         }
 
@@ -491,10 +486,8 @@ void menu_Operaciones_Generales(struct Lista *lista)
             printf("\nLongitud de la lista: %i", obtener_Longitud(lista));
             imprimir_Lista(lista);
             break;
-        case 3:
-            break;
-
         default:
+            printf("\nOpción no válida\n");
             break;
         }
 
