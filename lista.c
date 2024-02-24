@@ -156,7 +156,6 @@ void eliminar_Final_Lista(struct Lista *lista)
 {
     if (!es_Vacia_Lista(lista))
     {
-
         struct Nodo *nodoActual = lista->cabeza, *nodoAnterior = NULL;
 
         while (nodoActual->siguiente != NULL)
@@ -164,14 +163,15 @@ void eliminar_Final_Lista(struct Lista *lista)
             nodoAnterior = nodoActual;
             nodoActual = nodoActual->siguiente;
         }
-
         if (nodoAnterior == NULL)
         {
             lista->cabeza = NULL;
+            lista->cola = NULL;
         }
         else
         {
             nodoAnterior->siguiente = NULL;
+            lista->cola = nodoAnterior;
         }
 
         free(nodoActual);
