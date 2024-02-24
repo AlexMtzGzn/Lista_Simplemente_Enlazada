@@ -22,9 +22,9 @@ bool es_Vacia_Lista(struct Lista *lista)
 int obtener_Longitud(struct Lista *lista)
 {
     if (es_Vacia_Lista(lista))
-    {
+    
         return -1;
-    }
+    
     else
     {
         struct Nodo *nodoActual = lista->cabeza;
@@ -48,9 +48,9 @@ void inserta_Principio_Lista(struct Lista *lista, int *elemento)
     if (nodoNuevo != NULL)
     {
         if (es_Vacia_Lista(lista))
-        {
+        
             lista->cabeza = lista->cola = nodoNuevo;
-        }
+        
         else
         {
             nodoNuevo->siguiente = lista->cabeza;
@@ -58,9 +58,9 @@ void inserta_Principio_Lista(struct Lista *lista, int *elemento)
         }
     }
     else
-    {
+    
         printf("\nError al asignar memoria al nodo.");
-    }
+    
 }
 
 void inserta_Final_Lista(struct Lista *lista, int *elemento)
@@ -70,9 +70,9 @@ void inserta_Final_Lista(struct Lista *lista, int *elemento)
     if (nodoNuevo != NULL)
     {
         if (es_Vacia_Lista(lista))
-        {
+        
             lista->cabeza = lista->cola = nodoNuevo;
-        }
+        
         else
         {
             lista->cola->siguiente = nodoNuevo;
@@ -80,9 +80,9 @@ void inserta_Final_Lista(struct Lista *lista, int *elemento)
         }
     }
     else
-    {
+    
         printf("\nError al asignar memoria al nodo.");
-    }
+    
 }
 
 void inserta_Posicion_Lista(struct Lista *lista, int *elemento, int *posicion)
@@ -133,9 +133,7 @@ void inserta_Posicion_Lista(struct Lista *lista, int *elemento, int *posicion)
         }
     }
     else
-    {
         printf("Error al asignar memoria al nodo.\n");
-    }
 }
 
 void eliminar_Principio_Lista(struct Lista *lista)
