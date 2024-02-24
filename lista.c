@@ -179,32 +179,40 @@ void eliminar_Final_Lista(struct Lista *lista)
 
 void eliminar_Posicion_Lista(struct Lista *lista, int *posicion)
 {
-
     if (!es_Vacia_Lista(lista) && *posicion < obtener_Longitud(lista))
     {
         int contador = 0;
         struct Nodo *nodoActual = lista->cabeza, *nodoAnterior = NULL;
 
-        while (nodoActual != NULL)
+        // Avanzar hasta la posición a eliminar
+        while (nodoActual != NULL && contador != *posicion)
         {
-            if (contador == *posicion)
-            {
-                if (nodoAnterior == NULL)
-                {
-                    lista->cabeza = nodoActual->siguiente;
-                    free(nodoActual);
-                }
-                else
-                {
-                    nodoAnterior->siguiente = nodoActual->siguiente;
-                    free(nodoActual);
-                }
-                break;
-            }
-
             nodoAnterior = nodoActual;
             nodoActual = nodoActual->siguiente;
             contador++;
+        }
+
+        if (contador == *posicion)
+        {
+            if (nodoAnterior == NULL) 
+            {
+                lista->cabeza = nodoActual->siguiente;
+                free(nodoActual);
+
+                if (lista->cabeza == NULL) {
+                    lista->cola = NULL;
+                }
+            }
+            else
+            {
+                nodoAnterior->siguiente = nodoActual->siguiente;
+                free(nodoActual);
+
+                if (nodoActual->siguiente == NULL)
+                {
+                    lista->cola = nodoAnterior;
+                }
+            }
         }
     }
 }
