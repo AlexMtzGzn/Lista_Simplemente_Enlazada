@@ -144,6 +144,11 @@ void eliminar_Principio_Lista(struct Lista *lista)
         struct Nodo *nodoEliminar = lista->cabeza;
         lista->cabeza = nodoEliminar->siguiente;
         free(nodoEliminar);
+
+        if(obtener_Longitud(lista) == 1)
+            lista->cola = lista->cabeza;
+        if(es_vaciar_Lista(lista))
+            lista->cabeza = lista->cola = NULL;
     }
 }
 
