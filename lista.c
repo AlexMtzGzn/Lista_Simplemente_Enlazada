@@ -109,26 +109,24 @@ void inserta_Posicion_Lista(struct Lista *lista, int *elemento, int *posicion)
 
             if (contador == *posicion)
             {
-                
+                nodoNuevo->siguiente = nodoActual;
+                if (nodoAnterior != NULL)
 
-                if (nodoAnterior != NULL){
-                    nodoNuevo->siguiente = nodoActual;
                     nodoAnterior->siguiente = nodoNuevo;
-                }
-                    
-
-                if(nodoActual == NULL)
-                    inserta_Final_Lista(lista, elemento);
 
                 else
-                    inserta_Principio_Lista(lista, elemento);
-                
-                    
-            }
-            else
-            {
-                printf("Posición fuera de rango. No se pudo insertar.\n");
-                free(nodoNuevo);
+
+                    lista->cabeza = nodoNuevo;
+
+                if (nodoActual == NULL)
+
+                    lista->cola = nodoNuevo;
+
+                else
+                {
+                    printf("Posición fuera de rango. No se pudo insertar.\n");
+                    free(nodoNuevo);
+                }
             }
         }
     }
