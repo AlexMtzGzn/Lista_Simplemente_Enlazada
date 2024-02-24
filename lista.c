@@ -85,44 +85,58 @@ void inserta_Final_Lista(struct Lista *lista, int *elemento)
     }
 }
 
-void inserta_Posicion_Lista(struct Lista *lista, int *elemento, int *posicion) {
+void inserta_Posicion_Lista(struct Lista *lista, int *elemento, int *posicion)
+{
     struct Nodo *nodoNuevo = crearNodo(elemento);
 
-    if (nodoNuevo != NULL) {
-        if (es_Vacia_Lista(lista)) {
+    if (nodoNuevo != NULL)
+    {
+        if (es_Vacia_Lista(lista))
+        
             lista->cabeza = lista->cola = nodoNuevo;
-        } else {
+        
+        else
+        {
             struct Nodo *nodoActual = lista->cabeza, *nodoAnterior = NULL;
             int contador = 0;
 
-            while (nodoActual != NULL && contador < *posicion) {
+            while (nodoActual != NULL && contador < *posicion)
+            {
                 nodoAnterior = nodoActual;
                 nodoActual = nodoActual->siguiente;
                 contador++;
             }
 
-            if (contador == *posicion) {
+            if (contador == *posicion)
+            {
                 nodoNuevo->siguiente = nodoActual;
 
-                if (nodoAnterior != NULL) {
+                if (nodoAnterior != NULL)
+                
                     nodoAnterior->siguiente = nodoNuevo;
-                } else {
+                
+                else
+                
                     lista->cabeza = nodoNuevo;
-                }
+                
 
-                if (nodoActual == NULL) {
+                if (nodoActual == NULL)
+                
                     lista->cola = nodoNuevo;
-                }
-            } else {
+                
+            }
+            else
+            {
                 printf("Posición fuera de rango. No se pudo insertar.\n");
                 free(nodoNuevo);
             }
         }
-    } else {
+    }
+    else
+    {
         printf("Error al asignar memoria al nodo.\n");
     }
 }
-
 
 void eliminar_Principio_Lista(struct Lista *lista)
 {
