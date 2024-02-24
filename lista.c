@@ -147,7 +147,7 @@ void eliminar_Principio_Lista(struct Lista *lista)
 
         if(obtener_Longitud(lista) == 1)
             lista->cola = lista->cabeza;
-        if(es_vaciar_Lista(lista))
+        if(es_Vacia_Lista(lista))
             lista->cabeza = lista->cola = NULL;
     }
 }
