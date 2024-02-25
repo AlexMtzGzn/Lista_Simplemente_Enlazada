@@ -34,7 +34,7 @@ Este repositorio contiene una implementación de funciones basicas de una lista 
 
 1. **Clonar el Repositorio**: 
     ```bash
-    
+    git clone https://github.com/AlexMtzGzn/Lista_Simplemente_Enlazada.git
     ```
 2. **Navegar al Directorio del Proyecto**: 
     ```bash
@@ -54,7 +54,3 @@ Este repositorio contiene una implementación de funciones basicas de una lista 
 ## Contribuciones
 
 Las contribuciones son bienvenidas y apreciadas. Si encuentras errores, tienes sugerencias de mejoras o quieres agregar nuevas características, por favor, siéntete libre de abrir un issue o enviar un pull request. ¡Tu contribución ayudará a mejorar este proyecto para todos!
-
-## Licencia
-
-Este proyecto está licenciado bajo la [Licencia MIT](LICENSE). Si utilizas este código en tu proyecto, asegúrate de incluir el texto de la licencia en tu distribución y atribuir adecuadamente el crédito al autor original.
