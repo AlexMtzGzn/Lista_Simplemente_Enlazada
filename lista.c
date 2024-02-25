@@ -539,6 +539,9 @@ void menu_Principal(struct Lista *lista)
             vaciar_Lista(lista);
             imprimir_Lista(lista);
             break;
+        case 7:
+            printf("\nSaliendo...");
+            break;
         default:
             printf("\nOpción no válida\n");
             break;
