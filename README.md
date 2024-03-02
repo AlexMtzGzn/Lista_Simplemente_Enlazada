@@ -42,7 +42,7 @@ Este repositorio contiene una implementación de funciones basicas de una lista 
     ```
 3. **Compilar el Programa**: 
     ```bash
-    gcc -o lista main.c lista.c -std=c11
+    gcc -o lista main.c lista.c
     ```
 4. **Ejecutar el Programa**: 
     ```bash
