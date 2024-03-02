@@ -54,3 +54,7 @@ Este repositorio contiene una implementación de funciones basicas de una lista 
 ## Contribuciones
 
 Las contribuciones son bienvenidas y apreciadas. Si encuentras errores, tienes sugerencias de mejoras o quieres agregar nuevas características, por favor, siéntete libre de abrir un issue o enviar un pull request. ¡Tu contribución ayudará a mejorar este proyecto para todos!
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
